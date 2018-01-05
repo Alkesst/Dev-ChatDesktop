@@ -60,6 +60,7 @@ void DBManager::deleteServer(const Server& server){
     // Adapted from https://stackoverflow.com/questions/10219225/c-create-string-of-text-and-variables
     std::ostringstream oss;
     oss << "DELETE FROM SERVER WHERE id = " << server.id;
+    // Adapted from https://stackoverflow.com/questions/4338067/convert-stdstring-to-qstring
     QString os = QString::fromStdString(oss.str());
     success = query.exec(os);
     if(!success){
