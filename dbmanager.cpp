@@ -32,6 +32,7 @@ DBManager::DBManager(const QString& path) {
         qDebug() << "Error: failed to connect with database";
     }
 }
+
 void DBManager::addNewServer(Server& server){
     QSqlQuery query;
     query.prepare("INSERT INTO SERVER (name, hostname, port, certName, username)"

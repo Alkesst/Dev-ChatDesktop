@@ -2,6 +2,7 @@
 #define SERVER_LIST_WINDOW_H
 
 #include <QMainWindow>
+#include "dbmanager.h"
 
 namespace Ui {
 class ServerListWindow;
@@ -15,7 +16,13 @@ public:
     ~ServerListWindow();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void loadFromDB(Ui::ServerListWindow* ui, DBManager db);
+
+   // void on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
+    void on_AddServer_clicked();
+
+    void on_JoinServer_clicked();
 
 private:
     Ui::ServerListWindow *ui;

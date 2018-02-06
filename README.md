@@ -1,6 +1,8 @@
 # Dev-Chat Desktop Client
 
-This is a desktop app for[Dev-Chat][1]made with QT and C++.
+Desktop app for [Dev-Chat][1] made with QT and C++.
+
+This project is under construction.
 
 
 

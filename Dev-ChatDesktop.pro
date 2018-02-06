@@ -27,11 +27,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         server_list_window.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    items_server_list.cpp
 
 HEADERS += \
         server_list_window.h \
-    dbmanager.h
+    dbmanager.h \
+    items_server_list.h
 
 FORMS += \
-        server_list_window.ui
+        server_list_window.ui \
+    items_server_list.ui
