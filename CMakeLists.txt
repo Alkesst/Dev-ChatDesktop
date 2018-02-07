@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 project(DevChatDesktop)
-find_package(Qt5 COMPONENTS Widgets Sql REQUIRED)
+find_package(Qt5 COMPONENTS Widgets Sql Network REQUIRED)
 
 set(CMAKE_INCLUDE_CURRENT_DIR TRUE)
 set(CMAKE_AUTOMOC TRUE)
@@ -10,15 +10,18 @@ set(DevChatDesktop_SOURCES
     main.cpp
     dbmanager.cpp
     server_list_window.cpp
+    client_info.cpp
 )
 
 set(DevChatDesktop_HEADERS
     dbmanager.h
     server_list_window.h
+    client_info.h
 )
 
 set(DevChatDesktop_UI
     server_list_window.ui
+    items_server_list.ui
 )
 
 #set(DevChatDesktop_RSC
@@ -37,4 +40,5 @@ add_executable(DevChatDesktop
 target_link_libraries(DevChatDesktop
     Qt5::Widgets
     Qt5::Sql
+    Qt5::Network
 )

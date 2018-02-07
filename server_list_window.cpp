@@ -1,8 +1,6 @@
 #include "server_list_window.h"
 #include "items_server_list.h"
 #include "ui_server_list_window.h"
-#include <sstream>
-#include <string>
 #include <QListWidgetItem>
 #include <QDebug>
 
@@ -38,7 +36,6 @@ void ServerListWindow::loadFromDB(Ui::ServerListWindow* ui, DBManager db){
         ui->serverList->addItem(item);
         ui->serverList->setItemWidget(item, it);
     }
-    db.~DBManager();
 }
 
 
@@ -48,5 +45,9 @@ void ServerListWindow::on_AddServer_clicked(){
 }
 
 void ServerListWindow::on_JoinServer_clicked(){
-    // Connect to new server
+    QString path = "/Volumes/1315BDE/Programas/Dev-Chat Release/Cert/public.pem";
+    QString username = "Alkesstt";
+    QString hostname = "pi.servidor.io";
+    int port = 8081;
+    ClientInfo* a = new ClientInfo(username, path, hostname, port);
 }

@@ -4,6 +4,9 @@ Desktop app for [Dev-Chat][1] made with QT and C++.
 
 This project is under construction.
 
+### TODO
+- la interfaz tiene que controlar que el username no tenga más de 25 caracteres
+
 
 
 

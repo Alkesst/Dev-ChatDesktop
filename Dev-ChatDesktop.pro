@@ -7,7 +7,7 @@
 QT       += core gui
 QT       += sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 TARGET = Dev-ChatDesktop
 TEMPLATE = app
@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         server_list_window.cpp \
     dbmanager.cpp \
-    items_server_list.cpp
+    items_server_list.cpp \
+    client_info.cpp
 
 HEADERS += \
         server_list_window.h \
     dbmanager.h \
-    items_server_list.h
+    items_server_list.h \
+    client_info.h
 
 FORMS += \
         server_list_window.ui \

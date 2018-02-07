@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "dbmanager.h"
+#include "client_info.h"
 
 namespace Ui {
 class ServerListWindow;
