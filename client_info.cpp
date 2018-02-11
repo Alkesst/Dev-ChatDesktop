@@ -26,7 +26,7 @@ void ClientInfo::sslErrors(QList<QSslError> errors){
 }
 
 void ClientInfo::encrypted(){
-    emit receivedMessage("<<Console>>: ", "connection stablished with the server...");
+    emit receivedMessage("<<Console>>", "connection stablished with the server...");
 }
 
 QString ClientInfo::getUsername() { return username; }
@@ -44,7 +44,7 @@ void ClientInfo::fromServer(){
             QString user = username + '\n';
             socket->write(user.toUtf8());
         } else if(lineRead.startsWith("This username")){
-            emit receivedMessage("Server says ", lineRead);
+            emit receivedMessage("<<Server>>", lineRead);
             socket->close();
         } else {
             auto stdLineRead = lineRead.toStdWString();
@@ -52,16 +52,16 @@ void ClientInfo::fromServer(){
             if(pos != std::wstring::npos){
                 auto username = stdLineRead.substr(1, pos-2);
                 auto message = stdLineRead.substr(pos+1);
-                QString usrnm; usrnm.fromStdWString(username);
-                QString mssg; mssg.fromStdWString(message);
+                QString usrnm = QString::fromStdWString(username);
+                QString mssg = QString::fromStdWString(message);
                 emit receivedMessage(usrnm, mssg);
             } else {
-                emit receivedMessage("Server says ", lineRead);
+                emit receivedMessage("<<Server>>", lineRead);
             }
         }
     }
 }
 
 void ClientInfo::disconnect() {
-    emit receivedMessage("<<Console>>: ", "disconnected from server...");
+    emit receivedMessage("<<Console>>", "disconnected from server...");
 }

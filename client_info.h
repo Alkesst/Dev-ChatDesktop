@@ -11,6 +11,7 @@ class ClientInfo: public QObject {
 
     QSslSocket* socket;
     QString username;
+
 public:
     ClientInfo(QString username, QString cert, QString hostname, int port);
     QString getUsername();

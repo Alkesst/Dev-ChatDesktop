@@ -14,7 +14,9 @@ ServerListWindow::ServerListWindow(QWidget *parent)
     loadFromDB(ui, mngr);
 }
 
-ServerListWindow::~ServerListWindow() { delete ui; }
+ServerListWindow::~ServerListWindow() {
+    delete ui;
+}
 
 
 
@@ -45,9 +47,9 @@ void ServerListWindow::on_AddServer_clicked(){
 }
 
 void ServerListWindow::on_JoinServer_clicked(){
-    QString path = "/Volumes/1315BDE/Programas/Dev-Chat Release/Cert/public.pem";
-    QString username = "Alkesstt";
-    QString hostname = "pi.servidor.io";
-    int port = 8081;
-    ClientInfo* a = new ClientInfo(username, path, hostname, port);
+    auto item = ui->serverList->selectedItems()[0];
+    auto elem = (itemsServerList*) ui->serverList->itemWidget(item);
+    ChatClient* ct = new ChatClient(elem->getData());
+    ct->show();
+    close();
 }

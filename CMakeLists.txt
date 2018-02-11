@@ -11,17 +11,25 @@ set(DevChatDesktop_SOURCES
     dbmanager.cpp
     server_list_window.cpp
     client_info.cpp
+    chat_client.cpp
+    items_server_list.cpp
+    message_chat.cpp
 )
 
 set(DevChatDesktop_HEADERS
     dbmanager.h
     server_list_window.h
     client_info.h
+    chat_client.h
+    items_server_list.h
+    message_chat.h
 )
 
 set(DevChatDesktop_UI
     server_list_window.ui
     items_server_list.ui
+    chat_client.ui
+    message_chat.ui
 )
 
 #set(DevChatDesktop_RSC

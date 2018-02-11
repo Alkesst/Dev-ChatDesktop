@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "dbmanager.h"
 #include "client_info.h"
+#include "chat_client.h"
 
 namespace Ui {
 class ServerListWindow;

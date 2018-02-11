@@ -9,6 +9,7 @@ itemsServerList::itemsServerList(QWidget *parent) :
 }
 
 void itemsServerList::setData(Server info_server) {
+    info = info_server;
     ui->server->setText(info_server.name);
     ui->username->setText(info_server.username);
     ui->port->setText(QString::number(info_server.port));

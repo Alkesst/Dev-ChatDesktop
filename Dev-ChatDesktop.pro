@@ -29,14 +29,23 @@ SOURCES += \
         server_list_window.cpp \
     dbmanager.cpp \
     items_server_list.cpp \
-    client_info.cpp
+    client_info.cpp \
+    chat_client.cpp \
+    new_server_window.cpp \
+    message_chat.cpp
 
 HEADERS += \
         server_list_window.h \
     dbmanager.h \
     items_server_list.h \
-    client_info.h
+    client_info.h \
+    chat_client.h \
+    new_server_window.h \
+    message_chat.h
 
 FORMS += \
         server_list_window.ui \
-    items_server_list.ui
+    items_server_list.ui \
+    chat_client.ui \
+    new_server_window.ui \
+    message_chat.ui

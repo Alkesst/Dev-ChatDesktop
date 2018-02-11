@@ -15,10 +15,12 @@ class itemsServerList : public QWidget
 public:
     explicit itemsServerList(QWidget *parent = 0);
     void setData(Server info_server);
+    Server getData() { return info; }
     ~itemsServerList();
 
 private:
     Ui::itemsServerList *ui;
+    Server info;
 };
 
 #endif // ITEMS_SERVER_LIST_H
