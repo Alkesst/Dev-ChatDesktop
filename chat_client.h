@@ -18,10 +18,16 @@ public:
     ~ChatClient();
 
 private:
+    QString formatMessageReceived(QString username, QString message);
+    void formatMessageSent(QString username, QString message);
     Ui::ChatClient *ui;
     ClientInfo* client;
+
 private slots:
     void printMessage(QString username, QString message);
+    void on_pushButton_clicked();
+    void on_message_returnPressed();
+    void on_message_textChanged(const QString &message);
 };
 
 #endif // CHAT_CLIENT_H

@@ -32,8 +32,9 @@ void ClientInfo::encrypted(){
 QString ClientInfo::getUsername() { return username; }
 
 void ClientInfo::sendMessage(QString message) {
-    QString formattedMessage = '(' + username + ')' + ':' +message + '\n';
-    socket->write(formattedMessage.toUtf8());
+    message = message + '\n';
+    qDebug() << message;
+    socket->write(message.toUtf8());
 }
 
 void ClientInfo::fromServer(){
